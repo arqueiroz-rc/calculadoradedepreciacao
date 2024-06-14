@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Depreciação</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Depreciação de Bens</h1>
+        <form id="formDepreciacao">
+            <label for="tipoBem">Tipo de Bem:</label>
+            <input type="text" id="tipoBem" required>
+
+            <label for="dataAquisicao">Data de Aquisição:</label>
+            <input type="text" id="dataAquisicao" placeholder="dd/mm/aaaa" required>
+
+            <label for="valorInicial">Valor de Aquisição (R$):</label>
+            <input type="number" id="valorInicial" step="0.01" required>
+
+            <label for="taxaDepreciacao">Taxa de Depreciação (% ao ano):</label>
+            <input type="number" id="taxaDepreciacao" step="0.01" required>
+
+            <label for="vidaUtil">Vida Útil (anos):</label>
+            <input type="number" id="vidaUtil" readonly>
+
+            <label for="dataDepreciacao">Final do Exercício Fiscal:</label>
+            <input type="text" id="dataDepreciacao" placeholder="31/12/aaaa" value="31/12/" required>
+
+            <button type="button" onclick="calcularDepreciacao()">Calcular Depreciação</button>
+        </form>
+
+        <div id="resultados">
+            <h2>Resultados</h2>
+            <p id="depreciacaoAnoAquisicao"></p>
+            <div id="resultadosIntermediarios"></div>
+            <p id="depreciacaoAnoFiscal"></p>
+            <p id="depreciacaoAcumulada"></p>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
